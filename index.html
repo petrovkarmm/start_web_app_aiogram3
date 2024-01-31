@@ -65,8 +65,8 @@
                 let data = {
                     agreement: agreement
                 };
-                Telegram.WebApp.sendData(data);
-                Telegram.WebApp.close();
+                tg.sendData(data);
+                tg.close();
             } else {
                 alert("Для дальнейшей работы необходимо согласиться с политикой конфиденциальности");
             }
