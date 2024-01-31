@@ -47,19 +47,21 @@
       <label for="agreement">Я согласен с политикой конфиденциальности</label><br><br>
         </form>
       <button type="button" onclick="startBot()">Начать работу с ботом</button>
-    <script>
+    <script type="text/javascript">
       function startBot() {
         if (document.getElementById("agreement").checked) {
+            Telegram.WebApp.ready();
             let agreement = document.getElementById("agreement").value;
             let data = {
                 agreement: agreement
             }
-            window.Telegram.WebApp.sendData(data)
-            window.Telegram.WebApp.close();
+            Telegram.WebApp.sendData(data)
+            Telegram.WebApp.close(); 
         } else {
           alert("Для дальнейшей работы необходимо согласиться с политикой конфиденциальности");
         }
       }
     </script>
+    <script type="text/javascript"> Telegram.WebApp.expand(); </script>
   </body>
 </html>
