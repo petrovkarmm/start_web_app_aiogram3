@@ -50,17 +50,21 @@
     <script type="text/javascript">
       function startBot() {
         if (document.getElementById("agreement").checked) {
-            Telegram.WebApp.ready();
+            let tg = window.Telegram.WebApp;
             let agreement = document.getElementById("agreement").value;
+            tg.expand();
             let data = {
                 agreement: agreement
-            }
-            Telegram.WebApp.sendData(data)
+            };
+            Telegram.WebApp.sendData(data);
             Telegram.WebApp.close(); 
         } else {
           alert("Для дальнейшей работы необходимо согласиться с политикой конфиденциальности");
         }
       }
+    </script>
+  </body>
+</html>
     </script>
     <script type="text/javascript"> Telegram.WebApp.expand(); </script>
   </body>
