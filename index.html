@@ -2,7 +2,11 @@
 <html>
 
 <head type="text/javascript">
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        eruda.init();
+    </script>
     <title>Политика конфиденциальности</title>
     <style>
         body {
@@ -52,8 +56,6 @@
     <form>
         <input type="checkbox" id="agreement" name="agreement">
         <label for="agreement">Я согласен с политикой конфиденциальности</label>
-        <br>
-        <br>
     </form>
     <button type="button" onclick="startBot()">Начать работу с ботом</button>
     <script>
@@ -62,10 +64,6 @@
                 let tg = window.Telegram.WebApp;
                 let agreement = document.getElementById("agreement").value;
                 tg.expand();
-                let data = {
-                    agreement: agreement
-                };
-                tg.sendData(data);
                 tg.close();
             } else {
                 alert("Для дальнейшей работы необходимо согласиться с политикой конфиденциальности");
