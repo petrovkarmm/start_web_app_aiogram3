@@ -64,7 +64,9 @@
                 let tg = window.Telegram.WebApp;
                 let agreement = document.getElementById("agreement").value;
                 tg.expand();
-                tg.sendData(agreement);
+                tg.sendData({
+                    text: 'Привет мир'
+                });
                 tg.close();
             } else {
                 alert("Для дальнейшей работы необходимо согласиться с политикой конфиденциальности");
